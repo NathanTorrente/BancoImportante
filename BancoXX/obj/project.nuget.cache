@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "4tkskvW69afgmzLN3f9/Tgpu9xrzXHtKyb9BwOAjc4BhknXF12DIbGvBBFeSKvtRE4pRbj09PRYuVNzWmVNDdw==",
+  "dgSpecHash": "CfGssfYfErhj+PGkPqjMk1+F001uvTZAqrGLRGjK7kzKYHoywLnOZHs2/f/KH1GIb29dAdf+yzUtTnn/OSbW9Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\2022102020009\\Music\\BancoXX\\BancoXX\\BancoXX.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "G:\\BancoXX\\BancoXX\\BancoXX.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Familia Torrente ^-^\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.20\\microsoft.windowsdesktop.app.ref.6.0.20.nupkg.sha512",
+    "C:\\Users\\Familia Torrente ^-^\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.20\\microsoft.netcore.app.ref.6.0.20.nupkg.sha512",
+    "C:\\Users\\Familia Torrente ^-^\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.20\\microsoft.aspnetcore.app.ref.6.0.20.nupkg.sha512",
+    "C:\\Users\\Familia Torrente ^-^\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.20\\microsoft.netcore.app.host.win-x64.6.0.20.nupkg.sha512"
+  ],
   "logs": []
 }
