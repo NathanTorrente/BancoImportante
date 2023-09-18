@@ -3,44 +3,50 @@
 
 while (true)
 {
-    Console.WriteLine("Escolha uma ação:");
+    Console.WriteLine("\nEscolha uma ação:\n");
 
     Console.WriteLine("1- Conta Empresarial.");
-    Console.WriteLine("2- Conta Estudante.");
+    Console.WriteLine("2- Conta Estudante.\n");
+    Console.Write("Opção: ");
+
+    ContaEmpresa empre = new ContaEmpresa(12224343434434, "1404-4", "Usuário Anonimo", 3000, 50, 1000);
+    ContaEstudante estu = new ContaEstudante(931323232, "1404-4", "Usuário Feliz", 2000,5000, "364.768.160-12", "Instituto Federal (IFRO)");
+
     int esco = Convert.ToInt32(Console.ReadLine());
-
-    ContaEmpresa a = new ContaEmpresa(12224343434434, "1404-4", "Usuário Anonimo", 3000, 50, 1000);
-    ContaEstudante b = new ContaEstudante(931323232, "1404-4", "Usuário Feliz", 2000,5000, "364.768.160-12", "Instituto Federal (IFRO)");
-
-
     if (esco == 1)
     {
+ 
+        Console.WriteLine("\nEscolha uma das funções:");
+        Console.WriteLine("1- Fazer Saque.");
+        Console.WriteLine("2- Fazer Empréstico\n");
+    
 
-        int escol = Convert.ToInt32(Console.ReadLine());
-        Console.WriteLine("Escolha uma das funções:\n");
-        Console.WriteLine("1- Fazer Saque.\n");
-        Console.WriteLine("2- Fazer Depósito\n");
-        Console.WriteLine("3- Fazer Empréstico");
-
-        if (escol == 1)
+        if (esco == 1)
         {
-            a.Sacar(1000);
+            Console.Write("\nDigite o valor para o Saque: ");
+            int valo = Convert.ToInt32(Console.ReadLine());
+            empre.Sacar(valo);
         }
-        else if (escol == 2) 
-        { 
-        }
-        else if(escol == 3)
-        {
-
-        }
-      
-       
     }
     else if (esco == 2)
     {
-        Console.WriteLine("Escolha uma das funções:\n");
-        Console.WriteLine("1- Fazer Saque.\n");
-        Console.WriteLine("2- Fazer Empréstico");
+        Console.WriteLine("\nEscolha uma das funções:\n");
+        Console.WriteLine("1- Fazer Saque.");
+        Console.WriteLine("2- Fazer Empréstico.");
+       
+        if (esco == 1)
+        {
+            Console.Write("\nDigite o valor para o Saque: ");
+            int valosaq = Convert.ToInt32(Console.ReadLine());
+            empre.Sacar(valosaq);
+        }
+        else if (esco == 2)
+        {
+            Console.WriteLine("\nDigite o valor para o Empréstimo: \n");
+            int valoempres = Convert.ToInt32(Console.ReadLine());
+            empre.RealizarEmprestimo(valoempres);
+        }
+        Console.Clear();
     }
 
    
