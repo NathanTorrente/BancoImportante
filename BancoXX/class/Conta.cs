@@ -23,7 +23,9 @@ namespace BancoXX.@class
             TitularConta = titularConta;
             Saldo = saldo;
         }
-        public virtual void Sacar(double valor)
+        public virtual void Sacar(double valor) // polimorfimo, o pai tem uma ação e o filho tambem, porem são difentes.
+                                                // a ação vai ser subescrever., ou seja, estou subescrevendo o método da classe Pai.
+                                                // Ou melhor, VIRTUAL É USADA NA CLASSE PAI (CONTA)
         {
             if (valor >= Saldo)
             {
