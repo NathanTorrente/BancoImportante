@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BancoXX.@class // - (private) # (protected - é quando é restringido o acesso as informações de classes de herença, como pai e os filhos) - não precisa no exercício, + (método construtor)
 {
-    internal class ContaEmpresa : Conta
+    internal class ContaEmpresa : Conta //Herança
     {
         public double Anuidade { get; set; }
         public double LimiEmpre { get; set; }
@@ -23,7 +23,7 @@ namespace BancoXX.@class // - (private) # (protected - é quando é restringido 
             LimiEmpre = limiEmpre;
             TotEmpre = 0;
         }
-        public override void Sacar(double valor)
+        public override void Sacar(double valor) // Saque para Empresa.
         {
             if (valor <= Saldo)
             {
@@ -31,12 +31,11 @@ namespace BancoXX.@class // - (private) # (protected - é quando é restringido 
             }
             else if (valor <= (Saldo + LimiEmpre))
             {
-
-                Console.WriteLine($"Empréstimo de R$ {valorSacado.ToString("C2")} feito com sucesso.");
+                Console.WriteLine($"Empréstimo de R$ {valor.ToString("C2")} feito com sucesso.");
             }
             else
             {
-                Console.WriteLine("Saldo insuficiente para sacar e excede o limite de empréstimo.");
+                Console.WriteLine("Saldo insuficiente, limite de empréstimo atingido.");
             }
         }
         public void RealizarEmprestimo(double valor)

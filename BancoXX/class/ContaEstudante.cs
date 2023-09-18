@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BancoXX.@class
 {
-    internal class ContaEstudante : Conta
+    internal class ContaEstudante : Conta // Herança, Conta estudante é filho de Conta
     {
         public double LimiCheEspe { get; set; }
         public string CPF { get; set; }
@@ -15,7 +15,6 @@ namespace BancoXX.@class
 
         public ContaEstudante()
         {
-
         }
         public ContaEstudante(double nConta, string agencia, string titularConta, double saldo, double limiteChequeEspecial, string cpf, string instituicaoEnsino)
             : base(nConta, agencia, titularConta, saldo)
@@ -26,19 +25,20 @@ namespace BancoXX.@class
 
 
         }
-        public override void Sacar(double valor)
+        public override void Sacar(double valor) // Saque para Estudante.
         {
             if (valor <= (Saldo + LimiCheEspe))
             {
                 if (valor <= Saldo)
                 {
-                    Saldo -= valor;
+                    Saldo -= valor; // valor diminuindo do saldo...
                 }
                 else
                 {
                     double valorSacado = valor - Saldo;
+
                     Saldo = 0;
-                 
+                    LimiCheEspe -= valorSacado;// valor diminuindo do LimiCheEspecial...
                 }
             }
             else

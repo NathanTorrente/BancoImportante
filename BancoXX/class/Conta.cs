@@ -8,16 +8,13 @@ namespace BancoXX.@class
 {
     internal class Conta
     {
-
         public double nConta { get; set; }
         public string Agencia { get; set; }
         public string TitularConta { get; set; }
         public double Saldo { get; set; }
 
-
         public Conta()
         {
-
         }
         public Conta(double nConta, string agencia, string titularConta, double saldo)
         {
@@ -30,7 +27,7 @@ namespace BancoXX.@class
         {
             if (valor <= Saldo)
             {
-                Saldo -= valor;
+                Saldo -= valor; 
             }
             else
             {
@@ -41,15 +38,5 @@ namespace BancoXX.@class
         {
             Saldo += valor;
         }
-
-
-
-        //public double Saldo { get; set; }   
-        //public Conta (int nconta, double saldo)
-        //{
-        //    Saldo = saldo;
-        //}
-
-
     }
 }

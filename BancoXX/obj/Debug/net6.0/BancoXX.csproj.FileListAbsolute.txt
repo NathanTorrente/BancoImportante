@@ -1,0 +1,15 @@
+C:\Users\Familia Torrente ^-^\source\repos\BancoXX\BancoXX\bin\Debug\net6.0\BancoXX.exe
+C:\Users\Familia Torrente ^-^\source\repos\BancoXX\BancoXX\bin\Debug\net6.0\BancoXX.deps.json
+C:\Users\Familia Torrente ^-^\source\repos\BancoXX\BancoXX\bin\Debug\net6.0\BancoXX.runtimeconfig.json
+C:\Users\Familia Torrente ^-^\source\repos\BancoXX\BancoXX\bin\Debug\net6.0\BancoXX.dll
+C:\Users\Familia Torrente ^-^\source\repos\BancoXX\BancoXX\bin\Debug\net6.0\BancoXX.pdb
+C:\Users\Familia Torrente ^-^\source\repos\BancoXX\BancoXX\obj\Debug\net6.0\BancoXX.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Familia Torrente ^-^\source\repos\BancoXX\BancoXX\obj\Debug\net6.0\BancoXX.AssemblyInfoInputs.cache
+C:\Users\Familia Torrente ^-^\source\repos\BancoXX\BancoXX\obj\Debug\net6.0\BancoXX.AssemblyInfo.cs
+C:\Users\Familia Torrente ^-^\source\repos\BancoXX\BancoXX\obj\Debug\net6.0\BancoXX.csproj.CoreCompileInputs.cache
+C:\Users\Familia Torrente ^-^\source\repos\BancoXX\BancoXX\obj\Debug\net6.0\BancoXX.sourcelink.json
+C:\Users\Familia Torrente ^-^\source\repos\BancoXX\BancoXX\obj\Debug\net6.0\BancoXX.dll
+C:\Users\Familia Torrente ^-^\source\repos\BancoXX\BancoXX\obj\Debug\net6.0\refint\BancoXX.dll
+C:\Users\Familia Torrente ^-^\source\repos\BancoXX\BancoXX\obj\Debug\net6.0\BancoXX.pdb
+C:\Users\Familia Torrente ^-^\source\repos\BancoXX\BancoXX\obj\Debug\net6.0\BancoXX.genruntimeconfig.cache
+C:\Users\Familia Torrente ^-^\source\repos\BancoXX\BancoXX\obj\Debug\net6.0\ref\BancoXX.dll
