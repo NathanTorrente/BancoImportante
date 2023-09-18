@@ -43,13 +43,14 @@ namespace BancoXX.@class // - (private) # (protected - é quando é restringido 
             if (valor <= LimiEmpre)
             {
 
-                Console.WriteLine($"Empréstimo de R$ {valor:F2} pago com sucesso.");
+                Console.WriteLine($"Empréstimo de R$ {valor.ToString("F2")} pago com sucesso.");
             }
             else
             {
                 Console.WriteLine("O valor de empréstimo não pode ser concedido.");
             }
         }
+       
 
 
     }

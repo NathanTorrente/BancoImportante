@@ -23,7 +23,7 @@ namespace BancoXX.@class
             TitularConta = titularConta;
             Saldo = saldo;
         }
-        public void Sacar(double valor)
+        public override void Sacar(double valor)
         {
             if (valor <= Saldo)
             {

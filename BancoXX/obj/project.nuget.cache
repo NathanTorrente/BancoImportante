@@ -1,13 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "P8tcnsLrgoEhdfzogzDJQhfKg4L2iPtm2se+gWn8UO9cpK3egdZ37pqL3dkXmUEez/hqXj4/UnhHZzHJ8hMH8A==",
+  "dgSpecHash": "kQaXBBAWRn28mp0fLWxycSX7gs47NfO6RZ7i2YargoqXGCmjWRZXV1icev8TSzCuABgXioerlsVthOR+II1jJQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Familia Torrente ^-^\\source\\repos\\BancoXX\\BancoXX\\BancoXX.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\Familia Torrente ^-^\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.20\\microsoft.windowsdesktop.app.ref.6.0.20.nupkg.sha512",
-    "C:\\Users\\Familia Torrente ^-^\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.20\\microsoft.netcore.app.ref.6.0.20.nupkg.sha512",
-    "C:\\Users\\Familia Torrente ^-^\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.20\\microsoft.aspnetcore.app.ref.6.0.20.nupkg.sha512",
-    "C:\\Users\\Familia Torrente ^-^\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.20\\microsoft.netcore.app.host.win-x64.6.0.20.nupkg.sha512"
-  ],
+  "projectFilePath": "C:\\Users\\2022102020009\\Music\\BancoImportante\\BancoXX\\BancoXX.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }
