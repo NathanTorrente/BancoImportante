@@ -23,7 +23,7 @@ namespace BancoXX.@class // - (private) # (protected - é quando é restringido 
             LimiEmpre = limiEmpre;
             TotEmpre = 0;
         }
-        public override void Sacar(double valor) // Saque para Empresa.
+        public override void Sacar(double valor) // Saque para Empresa., é override pois é filho da classe conta
         {
             if (valor <= Saldo)
             {

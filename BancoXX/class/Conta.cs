@@ -25,7 +25,7 @@ namespace BancoXX.@class
         }
         public virtual void Sacar(double valor)
         {
-            if (valor <= Saldo)
+            if (valor >= Saldo)
             {
                 Saldo -= valor; 
             }
@@ -34,9 +34,18 @@ namespace BancoXX.@class
                 Console.WriteLine("Saldo insuficiente.");
             }
         }
-        public virtual void Depositar(double valor)
+        public virtual void Depositar(double valor) // virtual é quando a classe é a principal
         {
-            Saldo += valor;
+
+            if (Saldo >= 0)
+            {
+                Saldo += valor;
+
+            }
+            else if (Saldo < 0) 
+            {
+                Console.WriteLine("Saldo abaixo do limite para depositar!!");
+            }
         }
     }
 }
