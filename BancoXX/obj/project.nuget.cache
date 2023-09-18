@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CfGssfYfErhj+PGkPqjMk1+F001uvTZAqrGLRGjK7kzKYHoywLnOZHs2/f/KH1GIb29dAdf+yzUtTnn/OSbW9Q==",
+  "dgSpecHash": "P8tcnsLrgoEhdfzogzDJQhfKg4L2iPtm2se+gWn8UO9cpK3egdZ37pqL3dkXmUEez/hqXj4/UnhHZzHJ8hMH8A==",
   "success": true,
-  "projectFilePath": "G:\\BancoXX\\BancoXX\\BancoXX.csproj",
+  "projectFilePath": "C:\\Users\\Familia Torrente ^-^\\source\\repos\\BancoXX\\BancoXX\\BancoXX.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Familia Torrente ^-^\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.20\\microsoft.windowsdesktop.app.ref.6.0.20.nupkg.sha512",
     "C:\\Users\\Familia Torrente ^-^\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.20\\microsoft.netcore.app.ref.6.0.20.nupkg.sha512",

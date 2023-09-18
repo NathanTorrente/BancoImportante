@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "G:\\BancoXX\\BancoXX\\BancoXX.csproj": {}
+    "C:\\Users\\Familia Torrente ^-^\\source\\repos\\BancoXX\\BancoXX\\BancoXX.csproj": {}
   },
   "projects": {
-    "G:\\BancoXX\\BancoXX\\BancoXX.csproj": {
+    "C:\\Users\\Familia Torrente ^-^\\source\\repos\\BancoXX\\BancoXX\\BancoXX.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\BancoXX\\BancoXX\\BancoXX.csproj",
+        "projectUniqueName": "C:\\Users\\Familia Torrente ^-^\\source\\repos\\BancoXX\\BancoXX\\BancoXX.csproj",
         "projectName": "BancoXX",
-        "projectPath": "G:\\BancoXX\\BancoXX\\BancoXX.csproj",
+        "projectPath": "C:\\Users\\Familia Torrente ^-^\\source\\repos\\BancoXX\\BancoXX\\BancoXX.csproj",
         "packagesPath": "C:\\Users\\Familia Torrente ^-^\\.nuget\\packages\\",
-        "outputPath": "G:\\BancoXX\\BancoXX\\obj\\",
+        "outputPath": "C:\\Users\\Familia Torrente ^-^\\source\\repos\\BancoXX\\BancoXX\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Familia Torrente ^-^\\AppData\\Roaming\\NuGet\\NuGet.Config",
