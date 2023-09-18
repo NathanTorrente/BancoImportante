@@ -26,16 +26,24 @@ namespace BancoXX.@class
             TitularConta = titularConta;
             Saldo = saldo;
         }
-        public void Sacar (double valor)
+        public void Sacar(double valor)
         {
-            if (valor <= LimiEmpre)
+            if (valor <= Saldo)
             {
-                valor = TotEmpre;
-                Limiteemprestimo -= valor;
-
+                Saldo -= valor;
             }
-            else if (valor > LimiEmpre)
+            else
+            {
+                Console.WriteLine("Saldo insuficiente.");
+            }
         }
+        public virtual void Depositar(double valor)
+        {
+            Saldo += valor;
+        }
+
+
+
         //public double Saldo { get; set; }   
         //public Conta (int nconta, double saldo)
         //{
