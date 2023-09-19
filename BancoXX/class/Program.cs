@@ -23,6 +23,7 @@ while (true)
         int escolha = Convert.ToInt32(Console.ReadLine());
         if (escolha == 1)
         {
+            Console.WriteLine();
             Console.Write("\nDigite o valor para o Saque: ");
             int valo = Convert.ToInt32(Console.ReadLine());
             empre.Sacar(valo);
@@ -42,7 +43,7 @@ while (true)
         {
             Console.Write("\nDigite o valor para o Saque: ");
             int valosaq = Convert.ToInt32(Console.ReadLine());
-            empre.Sacar(valosaq);
+            estu.Sacar(valosaq);
             Console.WriteLine($"Foi Sacado com sucesso: {valosaq}");
         }
         else if (esco == 2)

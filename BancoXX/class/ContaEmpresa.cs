@@ -28,6 +28,10 @@ namespace BancoXX.@class // - (private) # (protected - é quando é restringido 
             if (valor <= Saldo)
             {
                 Saldo -= valor;
+                if (valor >= 5000) // limite de saque
+                {
+                    Saldo -= 5;
+                }
             }
             else if (valor <= (Saldo + LimiEmpre))
             {
