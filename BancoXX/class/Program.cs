@@ -1,6 +1,6 @@
 ﻿using BancoXX.@class;
 
-
+int Nconta = 0;
 while (true)
 {
     Console.WriteLine("\nEscolha uma ação:\n");
@@ -21,64 +21,74 @@ while (true)
         Console.WriteLine("Digite o nome do títular: ");
         string nomeTitular = Console.ReadLine();
 
-    if (esco == 1) // Empresarial
+    if (escolha == 1) // Empresarial
     {
-        ContaEmpresa empre = new ContaEmpresa(12224343434434, "1404-4", "Usuário Anonimo", 3000, 50, 1000);
+        ContaEmpresa empre = new ContaEmpresa(Nconta, "1404-4", nomeTitular, 0, 0.35, 1000);
+        Nconta += 1;
 
-        Console.Write("\nEscolha uma das funções:\n");
-        Console.WriteLine("1- Fazer Saque.");
-        Console.WriteLine("2- Depositar");
-        Console.WriteLine("3- Sair");
-
-        Console.Write("Opção: ");
-
-        int escos = Convert.ToInt32(Console.ReadLine());
-
-        if (escos == 1)
+        while (true)
         {
-            Console.Write("\nDigite o valor para o Saque: ");
-            int valor = Convert.ToInt32(Console.ReadLine());
-            empre.Sacar(valor);
-            Console.WriteLine($"Seu Novo Saldo {empre.Saldo} ");
-        }
-        else if (escos == 2)
-        {
-            Console.Clear();
-            Console.WriteLine("\n Digite o valor para empréstimo: ");
-            double valor = Convert.ToDouble(Console.ReadLine());
-            empre.RealizarEmprestimo(valor);
-            Console.WriteLine($"Seu Novo Saldo {empre.Saldo} ");
-        }
-        else if (escos == 3)
-        {
-            Console.Clear();
-            break;
-        }
+            Console.Write("\nEscolha uma das funções:\n");
+            Console.WriteLine("1- Fazer Saque.");
+            Console.WriteLine("2- Depositar");
+            Console.WriteLine("3- Sair");
 
-    }
-    
-    else if (esco == 2) // Estudante
-    {
-        ContaEstudante estu = new ContaEstudante(931323232, "1404-4", "Usuário Feliz", 2000, 5000, "364.768.160-12", "Instituto Federal (IFRO)");
+            Console.Write("Opção: ");
 
-        Console.Write("\nEscolha uma das funções:\n");
-        Console.WriteLine("1- Fazer Saque.");
-            
-       
-        if (esco == 1)
-        {
-            Console.Write("\nDigite o valor para o Saque: ");
-            int valosaq = Convert.ToInt32(Console.ReadLine()); 
-            estu.Sacar(valosaq);
-         
-            Console.WriteLine($"Foi Sacado com sucesso: {valosaq}");
-          
+            int escos = Convert.ToInt32(Console.ReadLine());
+
+            if (escos == 1)
+            {
+                Console.Write("\nDigite o valor para o Saque: ");
+                int valor = Convert.ToInt32(Console.ReadLine());
+                empre.Sacar(valor);
+                Console.WriteLine($"Seu Novo Saldo {empre.Saldo} ");
+            }
+            else if (escos == 2)
+            {
+                Console.Clear();
+                Console.WriteLine("\n Digite o valor para empréstimo: ");
+                double valor = Convert.ToDouble(Console.ReadLine());
+                empre.RealizarEmprestimo(valor);
+                Console.WriteLine($"Seu Novo Saldo {empre.Saldo} ");
+            }
+            else if (escos == 3)
+            {
+                Console.Clear();
+                break;
+            }
         }
     }
-
-    else if (esco == 3) // Normal
+     
+    else if (escolha == 2) // Estudante
     {
-        Conta c = new Conta(23333, "1404-1", "Carioca", 0);
+
+        ContaEstudante estu = new ContaEstudante(Nconta, "1404-4", "Usuário Feliz", 2000, 5000, "364.768.160-12", "Instituto Federal (IFRO)");
+        Nconta += 1;
+        while (true)
+        {
+            Console.Write("\nEscolha uma das funções:\n");
+            Console.WriteLine("1- Fazer Saque.");
+
+
+            if (esco == 1)
+            {
+                Console.Write("\nDigite o valor para o Saque: ");
+                int valosaq = Convert.ToInt32(Console.ReadLine());
+                estu.Sacar(valosaq);
+
+                Console.WriteLine($"Seu Novo Saldo {estu.Saldo} ");
+
+            }
+        }
+     
+    }
+
+    else if (escolha == 3) // Normal
+    {
+        Conta c = new Conta(Nconta, "1404-1", "Carioca", 0);
+        ContaEmpresa empre = new ContaEmpresa(Nconta, "1404-4", nomeTitular, 0, 0.35, 1000);
+        Nconta += 1;
         while (true)
         {
             Console.Write("\nEscolha uma das funções:\n");
@@ -99,13 +109,21 @@ while (true)
             }
             else if (escos == 2)
             {
-                Console.Clear();    
+                Console.Clear();
                 Console.WriteLine("\n Digite o valor para Depositar: ");
                 double valor = Convert.ToDouble(Console.ReadLine());
                 c.Depositar(valor);
-                Console.WriteLine($"Seu Novo Saldo {c.Saldo} " );
+                Console.WriteLine($"Seu Novo Saldo {c.Saldo} ");
             }
             else if (escos == 3)
+            {
+                Console.Clear();
+                Console.WriteLine("\n Digite o valor para Depositar: ");
+                double valor = Convert.ToDouble(Console.ReadLine());
+                empre.RealizarEmprestimo(valor);
+                Console.WriteLine($"Seu Novo Saldo {c.Saldo} ");
+            }
+            else if (escos == 4)
             {
                 Console.Clear();
                 break;
