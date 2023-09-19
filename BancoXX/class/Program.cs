@@ -11,17 +11,17 @@ while (true)
     Console.Write("Opção: ");
    
     
-    int esco = Convert.ToInt32(Console.ReadLine());
+    int escolhadomenu = Convert.ToInt32(Console.ReadLine());
 
         Console.WriteLine("\nEscolha uma das funções:");
         Console.WriteLine("1- Fazer Saque.");
         Console.WriteLine("2- Fazer Empréstico\n");
     
-        int escolha = Convert.ToInt32(Console.ReadLine());
+        
         Console.WriteLine("Digite o nome do títular: ");
         string nomeTitular = Console.ReadLine();
 
-    if (escolha == 1) // Empresarial
+    if (escolhadomenu == 1) // Empresarial
     {
         ContaEmpresa empre = new ContaEmpresa(Nconta, "1404-4", nomeTitular, 0, 0.35, 1000);
         Nconta += 1;
@@ -35,16 +35,16 @@ while (true)
 
             Console.Write("Opção: ");
 
-            int escos = Convert.ToInt32(Console.ReadLine());
+            int escolh = Convert.ToInt32(Console.ReadLine());
 
-            if (escos == 1)
+            if (escolh == 1)
             {
                 Console.Write("\nDigite o valor para o Saque: ");
                 int valor = Convert.ToInt32(Console.ReadLine());
                 empre.Sacar(valor);
                 Console.WriteLine($"Seu Novo Saldo {empre.Saldo} ");
             }
-            else if (escos == 2)
+            else if (escolh == 2)
             {
                 Console.Clear();
                 Console.WriteLine("\n Digite o valor para empréstimo: ");
@@ -52,7 +52,7 @@ while (true)
                 empre.RealizarEmprestimo(valor);
                 Console.WriteLine($"Seu Novo Saldo {empre.Saldo} ");
             }
-            else if (escos == 3)
+            else if (escolh == 3)
             {
                 Console.Clear();
                 break;
@@ -60,7 +60,7 @@ while (true)
         }
     }
      
-    else if (escolha == 2) // Estudante
+    else if (escolhadomenu == 2) // Estudante
     {
 
         ContaEstudante estu = new ContaEstudante(Nconta, "1404-4", "Usuário Feliz", 2000, 5000, "364.768.160-12", "Instituto Federal (IFRO)");
@@ -69,7 +69,7 @@ while (true)
         {
             Console.Write("\nEscolha uma das funções:\n");
             Console.WriteLine("1- Fazer Saque.");
-
+            int esco = Convert.ToInt32(Console.ReadLine());
 
             if (esco == 1)
             {
@@ -84,7 +84,7 @@ while (true)
      
     }
 
-    else if (escolha == 3) // Normal
+    else if (escolhadomenu == 3) // Normal
     {
         Conta c = new Conta(Nconta, "1404-1", "Carioca", 0);
         ContaEmpresa empre = new ContaEmpresa(Nconta, "1404-4", nomeTitular, 0, 0.35, 1000);
@@ -94,7 +94,8 @@ while (true)
             Console.Write("\nEscolha uma das funções:\n");
             Console.WriteLine("1- Fazer Saque.");
             Console.WriteLine("2- Depositar");
-            Console.WriteLine("3- Sair");
+            Console.WriteLine("3- Empréstimo");
+            Console.WriteLine("4- Sair");
 
             Console.Write("Opção: ");
 
