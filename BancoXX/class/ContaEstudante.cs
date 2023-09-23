@@ -23,25 +23,35 @@ namespace BancoXX.@class
         {
             LimiCheEspe = limiteChequeEspecial;
             CPF = cpf;
-            NomeInstituicao = NomeInstituicao;
+            NomeInstituicao = instituicaoEnsino;
 
 
         }
         public override void Sacar(double valor) // Saque para Estudante.
         {
-            if (valor <= (Saldo + LimiCheEspe))
+            if (valor <= Saldo)
             {
-                if (valor <= Saldo)
+                Saldo -= valor; // valor diminuindo do saldo...
+
+                if(Saldo > 0) 
                 {
-                    Saldo -= valor; // valor diminuindo do saldo...
-                }
-                else
-                {
-                    double valorSacado = valor - Saldo;
+                    double valorSacado = Saldo - valor;
 
                     Saldo = 0;
                     LimiCheEspe -= valorSacado;// valor diminuindo do LimiCheEspecial...
                 }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("\nO valor deve ser maior que 0!");
+                    Console.ResetColor();
+                }
+            }
+            else if (valor <= (Saldo + LimiCheEspe))
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine($"Saque de {valor.ToString("C2")} feito com sucesso.");
+                Console.ResetColor();
             }
             else
             {

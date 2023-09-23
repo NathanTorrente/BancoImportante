@@ -19,22 +19,22 @@ internal class Program
             Console.Clear();
             if (escolhadomenu == 1) // Empresarial
             {
-                Console.WriteLine("Digite o nome do títular: \n");
+                Console.Write("\nDigite o nome do títular: ");
                 string nomeTitular = Console.ReadLine();
 
-                Console.WriteLine("Digite a agencia: \n");
+                Console.Write("Digite a agencia: ");
                 string agencia = Convert.ToString(Console.ReadLine());
 
-             
                 ContaEmpresa empre = new ContaEmpresa(Nconta, agencia, nomeTitular, 0, 5, 6000);
                 Nconta += 1;
 
                 while (true)
                 {
-                    Console.Write("\nEscolha uma das funções:\n");
-                    Console.WriteLine("1- Fazer Saque.");
+                    Console.WriteLine($" Numero da conta: {Nconta}\n");
+                    Console.Write("\nEscolha uma das funções: \n");
+                    Console.WriteLine("\n1- Fazer Saque.");
                     Console.WriteLine("2- Fazer Empréstimo.");
-                    Console.WriteLine("3- Sair");
+                    Console.WriteLine("3- Sair\n");
 
                     Console.Write("Opção: ");
 
@@ -42,28 +42,37 @@ internal class Program
 
                     if (escolh == 1) // Fazer saque
                     {
-                        Console.WriteLine($"Saldo Existente: {empre.Saldo}");
+                        Console.Clear();
+                      
+                        Console.WriteLine($"\nSaldo Existente: {empre.Saldo}");
 
-                        Console.WriteLine("\nDigite o valor para o saque: ");
+                        Console.Write("\nDigite o valor para o saque R$: ");
                         int valor = Convert.ToInt32(Console.ReadLine());
 
                         if (valor <= 0)
                         {
+                            Console.ForegroundColor = ConsoleColor.Red;
                             Console.WriteLine("\nO valor do saque deve ser maior do que zero!!");
+                            Console.ResetColor();
                         }
                         else if (valor > empre.Saldo)
                         {
-                            Console.WriteLine("Saldo insuficiente!");
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("\nSaldo insuficiente!");
+                            Console.ResetColor();
                         }
                         else 
                         {
                             empre.Sacar(valor);
-                            Console.WriteLine($"\n  Saldo Atual: {empre.Saldo} ");
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.WriteLine($"\n  Saque Realizado! -- Saldo Atual: {empre.Saldo.ToString("C2")} ");
+                            Console.ResetColor();
                         } 
                     }
                     else if (escolh == 2) // Fazer empréstimo
                     {
                         Console.Clear();
+
                         Console.WriteLine($"\nSaldo existente: {empre.Saldo}");
                         Console.WriteLine($"Limite de seu empréstimo: {empre.LimiEmpre}");
                         Console.Write("\n Digite o valor para empréstimo: ");
@@ -82,18 +91,30 @@ internal class Program
             }
             else if (escolhadomenu == 2) // Estudante
             {
-                Console.WriteLine("Digite o nome do títular: \n");
+               
+                Console.Write("\nDigite o nome do títular: ");
                 string nomeTitular = Console.ReadLine();
+                Console.Write("Digite seu CPF: ");
+                string cpf = Convert.ToString(Console.ReadLine());
+                Console.Write("Digite a agencia: ");
+                string agencia = Convert.ToString(Console.ReadLine());
                 
-                ContaEstudante estu = new ContaEstudante(Nconta, "1404-4", nomeTitular, 2000, 5000, "364.768.160-12", "Instituto Federal (IFRO)");
+                ContaEstudante estu = new ContaEstudante(Nconta, agencia, nomeTitular, 2000, 5000, cpf, "Instituto Federal (IFRO)");
                 Nconta += 1;
-
+                Console.WriteLine($"Nome do Instituto: {estu.NomeInstituicao}");
+                Console.WriteLine($"Numero da conta: {Nconta}");
+               
                 while (true)
                 {
+                  
                     Console.Write("\nEscolha uma das funções:\n");
-                    Console.WriteLine("1- Fazer Saque.");
+                    Console.WriteLine($"\nSaldo Atual: {estu.Saldo}");
+                    Console.WriteLine($"Limite de Check Especial: {estu.LimiCheEspe}");
+                    Console.WriteLine("\n 1- Fazer Saque\n");
+                   
+                    Console.Write("Opção: ");
                     int esco = Convert.ToInt32(Console.ReadLine());
-
+                    Console.Clear();
                     if (esco == 1) // Fazer saque
                     {
                         Console.Write("\nDigite o valor para o Saque: ");
@@ -102,11 +123,12 @@ internal class Program
 
                         Console.WriteLine($"Seu Novo Saldo {estu.Saldo} ");
                     }
+
                 }
             }
             else if (escolhadomenu == 3) // Normal
             {
-                Console.WriteLine("Digite o nome do títular: \n");
+                Console.Write("Digite o nome do títular:");
                 string nomeTitular = Console.ReadLine();
 
                 Conta c = new Conta(Nconta, "1404-1", "Carioca", 0);
@@ -115,6 +137,7 @@ internal class Program
                 Nconta += 1;
                 while (true)
                 {
+                    Console.WriteLine($" Numero da conta: {Nconta}\n");
                     Console.Write("\nEscolha uma das funções:\n");
                     Console.WriteLine("1- Fazer Saque.");
                     Console.WriteLine("2- Depositar");
