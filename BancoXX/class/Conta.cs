@@ -44,7 +44,7 @@ namespace BancoXX.@class
                 Saldo += valor;
 
             }
-            else if (Saldo < 0) 
+            else 
             {
                 Console.WriteLine("Saldo abaixo do limite para depositar!!");
             }

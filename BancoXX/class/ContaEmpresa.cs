@@ -35,7 +35,7 @@ namespace BancoXX.@class // - (private) # (protected - é quando é restringido 
             }
             else if (valor <= (Saldo + LimiEmpre))
             {
-                Console.WriteLine($"Empréstimo de R$ {valor.ToString("C2")} feito com sucesso.");
+                Console.WriteLine($"Empréstimo de {valor.ToString("C2")} feito com sucesso.");
             }
             else
             {
@@ -47,7 +47,7 @@ namespace BancoXX.@class // - (private) # (protected - é quando é restringido 
             if (valor <= LimiEmpre)
             {
 
-                Console.WriteLine($"Empréstimo de R$ {valor.ToString("F2")} pago com sucesso.");
+                Console.WriteLine($"Empréstimo de {valor.ToString("C2")} pago com sucesso.");
             }
             else
             {

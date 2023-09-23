@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,15 +11,15 @@ namespace BancoXX.@class
     {
         public double LimiCheEspe { get; set; }
         public string CPF { get; set; }
-        public string NomeInstituicao { get; set; } 
+        public string NomeInstituicao { get; set; }
 
 
         public ContaEstudante()
         {
         }
         public ContaEstudante(double nConta, string agencia, string titularConta, double saldo, double limiteChequeEspecial, string cpf, string instituicaoEnsino)
-            :base(nConta, agencia, titularConta, saldo) // os valores recebidos são armazenados e são pegos da classe PAI (CONTA)
-            
+            : base(nConta, agencia, titularConta, saldo) // os valores recebidos são armazenados e são pegos da classe PAI (CONTA)
+
         {
             LimiCheEspe = limiteChequeEspecial;
             CPF = cpf;
