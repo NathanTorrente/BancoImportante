@@ -26,7 +26,7 @@ internal class Program
                 string agencia = Convert.ToString(Console.ReadLine());
 
              
-                ContaEmpresa empre = new ContaEmpresa(Nconta, agencia, nomeTitular, 0, 5, 1000);
+                ContaEmpresa empre = new ContaEmpresa(Nconta, agencia, nomeTitular, 0, 5, 6000);
                 Nconta += 1;
 
                 while (true)
@@ -42,14 +42,24 @@ internal class Program
 
                     if (escolh == 1) // Fazer saque
                     {
-                        Console.WriteLine($"Saldo existente: {empre.Saldo}");
+                        Console.WriteLine($"Saldo Existente: {empre.Saldo}");
 
-                        Console.Write("\nDigite o valor para o Saque: ");
+                        Console.WriteLine("\nDigite o valor para o saque: ");
                         int valor = Convert.ToInt32(Console.ReadLine());
-                        empre.Sacar(valor);
 
-                        Console.WriteLine($"Foi Sacado com sucesso, saldo atual: {empre.Saldo}");
-
+                        if (valor <= 0)
+                        {
+                            Console.WriteLine("\nO valor do saque deve ser maior do que zero!!");
+                        }
+                        else if (valor > empre.Saldo)
+                        {
+                            Console.WriteLine("Saldo insuficiente!");
+                        }
+                        else 
+                        {
+                            empre.Sacar(valor);
+                            Console.WriteLine($"\n  Saldo Atual: {empre.Saldo} ");
+                        } 
                     }
                     else if (escolh == 2) // Fazer empréstimo
                     {
@@ -60,7 +70,7 @@ internal class Program
 
                         double valor = Convert.ToDouble(Console.ReadLine());
                         empre.RealizarEmprestimo(valor);
-                        Console.WriteLine($"\nFoi Sacado com sucesso, saldo atual: {empre.Saldo}");
+                        Console.WriteLine($"\nSaldo atual: {empre.Saldo}");
                         Console.WriteLine($"O valor atual do limite é: {empre.LimiEmpre} ");
                     }
                     else if (escolh == 3) // Sair das opções
@@ -159,6 +169,18 @@ internal class Program
                         break;
                     }
                 }
+            }
+            else if (escolhadomenu == 4)
+            {
+                Console.WriteLine("\nFechando o programa!");
+                break;
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Opção Inválida!");
+                  Console.ResetColor();
+               
             }
         }
     }

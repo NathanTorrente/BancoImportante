@@ -27,10 +27,11 @@ namespace BancoXX.@class
                                                 // a ação vai ser subescrever., ou seja, estou subescrevendo o método da classe Pai.
                                                 // Ou melhor, VIRTUAL É USADA NA CLASSE PAI (CONTA)
         {
-            if (valor >= Saldo)
+            if (valor <= Saldo)
             {
                 Saldo -= valor; 
             }
+ 
             else
             {
                 Console.WriteLine("Saldo insuficiente.");
@@ -42,7 +43,6 @@ namespace BancoXX.@class
             if (Saldo >= 0)
             {
                 Saldo += valor;
-
             }
             else 
             {

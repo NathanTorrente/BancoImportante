@@ -25,37 +25,48 @@ namespace BancoXX.@class // - (private) # (protected - é quando é restringido 
         }
         public override void Sacar(double valor) // Saque para Empresa., é override pois é filho da classe conta
         {
-            if (valor <= Saldo)
+            if (valor <= Saldo) 
             {
                 Saldo -= valor;
-                if (valor >= 5000) // limite de saque
+
+                if (Saldo <= 5000) // este saldo se refere ao total, ex: 5500, saquei 5100, valor 400
+                                   // como o valor é menor, -5 desse valor total = 395
                 {
                     Saldo -= 5;
+                    Console.WriteLine("valor acima de 5000, (R$ - 5,00)");
                 }
+
             }
             else if (valor <= (Saldo + LimiEmpre))
             {
                 Console.WriteLine($"Empréstimo de {valor.ToString("C2")} feito com sucesso.");
+
+                
             }
+           
             else
             {
                 Console.WriteLine("Saldo insuficiente, limite de empréstimo atingido.");
             }
+            
         }
         public void RealizarEmprestimo(double valor)
         {
             if (valor <= LimiEmpre)
             {
 
+
+                LimiEmpre -= valor; // diminui o limite emprestimo
+                Saldo += valor; // soma Saldo (atual) com o valor estipulado EX: 6000 - 5000 = 995
+              
                 Console.WriteLine($"Empréstimo de {valor.ToString("C2")} pago com sucesso.");
+              
             }
             else
             {
                 Console.WriteLine("O valor de empréstimo não pode ser concedido.");
             }
         }
-       
-
 
     }
 }
