@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,34 +30,36 @@ namespace BancoXX.@class
         }
         public override void Sacar(double valor) // Saque para Estudante.
         {
-            if (valor <= Saldo)
-            {
-                Saldo -= valor; // valor diminuindo do saldo...
-
-                if(Saldo > 0) 
-                {
-                    double valorSacado = Saldo - valor;
-
-                    Saldo = 0;
-                    LimiCheEspe -= valorSacado;// valor diminuindo do LimiCheEspecial...
-                }
-                else
-                {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("\nO valor deve ser maior que 0!");
-                    Console.ResetColor();
-                }
-            }
-            else if (valor <= (Saldo + LimiCheEspe))
-            {
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine($"Saque de {valor.ToString("C2")} feito com sucesso.");
+            
+            
+           if (valor <= 0)
+           {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("\nO valor deve ser maior que 0!");
                 Console.ResetColor();
+           }
+           else if (Saldo >= valor)
+           {
+               Saldo -= valor; // valor diminuindo do saldo...
+               Console.ForegroundColor = ConsoleColor.Green;
+               Console.WriteLine("\n Saque feito com sucesso!");
+               Console.ResetColor();
+            }
+            else if (LimiCheEspe >= valor)
+            {
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.WriteLine("\n Esta utilizando o Check especial!!");
+                Console.ResetColor();
+                LimiCheEspe -= valor; // valor diminuindo do o Check especial..
+                Saldo =0;
             }
             else
             {
-                Console.WriteLine("Saldo insuficiente, foi atingido limite de cheque especial.");
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("\nSaldo insuficiente!");
+                Console.ResetColor();
             }
+
         }
 
     }

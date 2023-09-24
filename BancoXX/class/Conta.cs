@@ -27,27 +27,50 @@ namespace BancoXX.@class
                                                 // a ação vai ser subescrever., ou seja, estou subescrevendo o método da classe Pai.
                                                 // Ou melhor, VIRTUAL É USADA NA CLASSE PAI (CONTA)
         {
-            if (valor <= Saldo)
+            if (valor <= 0)
             {
-                Saldo -= valor; 
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("\nO valor deve ser maior que 0!");
+                Console.ResetColor();
             }
- 
+            else if (valor <= Saldo)
+            {
+
+                    Saldo -= valor;                      
+            }
             else
             {
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Saldo insuficiente.");
+                Console.ResetColor();
             }
+
         }
         public virtual void Depositar(double valor) // virtual é quando a classe é a principal
         {
+            if (valor <= 0)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("\nO valor deve ser maior que 0!");
+                Console.ResetColor();
+            }
+            else
+            {
+                if (valor > 0)
+                {
+                    Saldo += valor;
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine($"\n Depositado com sucesso! Seu Novo Saldo R$: {Saldo}");
+                    Console.ResetColor();
+                }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("\n Saldo abaixo do limite para depositar!!");
+                    Console.ResetColor();
 
-            if (Saldo >= 0)
-            {
-                Saldo += valor;
-            }
-            else 
-            {
-                Console.WriteLine("Saldo abaixo do limite para depositar!!");
-            }
+                }
+            }    
         }
     }
 }

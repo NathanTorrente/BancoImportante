@@ -1,4 +1,5 @@
 ﻿using BancoXX.@class;
+using System.Drawing;
 
 internal class Program
 {
@@ -44,7 +45,7 @@ internal class Program
                     {
                         Console.Clear();
                       
-                        Console.WriteLine($"\nSaldo Existente: {empre.Saldo}");
+                        Console.WriteLine($"\nSaldo Existente R$: {empre.Saldo}");
 
                         Console.Write("\nDigite o valor para o saque R$: ");
                         int valor = Convert.ToInt32(Console.ReadLine());
@@ -72,15 +73,14 @@ internal class Program
                     else if (escolh == 2) // Fazer empréstimo
                     {
                         Console.Clear();
-
-                        Console.WriteLine($"\nSaldo existente: {empre.Saldo}");
-                        Console.WriteLine($"Limite de seu empréstimo: {empre.LimiEmpre}");
+                        Console.WriteLine($"\nSaldo existente R$: {empre.Saldo}");
+                        Console.WriteLine($"Limite de seu empréstimo R$: {empre.LimiEmpre}");
                         Console.Write("\n Digite o valor para empréstimo: ");
 
                         double valor = Convert.ToDouble(Console.ReadLine());
                         empre.RealizarEmprestimo(valor);
-                        Console.WriteLine($"\nSaldo atual: {empre.Saldo}");
-                        Console.WriteLine($"O valor atual do limite é: {empre.LimiEmpre} ");
+                        Console.WriteLine($"\nSaldo atual R$: {empre.Saldo}");
+                        Console.WriteLine($"O valor atual do limite é R$: {empre.LimiEmpre} ");
                     }
                     else if (escolh == 3) // Sair das opções
                     {
@@ -108,31 +108,35 @@ internal class Program
                 {
                   
                     Console.Write("\nEscolha uma das funções:\n");
-                    Console.WriteLine($"\nSaldo Atual: {estu.Saldo}");
-                    Console.WriteLine($"Limite de Check Especial: {estu.LimiCheEspe}");
-                    Console.WriteLine("\n 1- Fazer Saque\n");
-                   
+                    Console.WriteLine($"\nSaldo Atual R$: {estu.Saldo}");
+                    Console.WriteLine($"Limite de Check Especial R$: {estu.LimiCheEspe}");
+                    Console.WriteLine("\n 1- Fazer Saque");
+                    Console.WriteLine(" 2- Sair\n");
+
                     Console.Write("Opção: ");
                     int esco = Convert.ToInt32(Console.ReadLine());
                     Console.Clear();
                     if (esco == 1) // Fazer saque
                     {
+                        Console.WriteLine($"\nSaldo Existente R$: {estu.Saldo}");
                         Console.Write("\nDigite o valor para o Saque: ");
                         int valosaq = Convert.ToInt32(Console.ReadLine());
-                        estu.Sacar(valosaq);
-
-                        Console.WriteLine($"Seu Novo Saldo {estu.Saldo} ");
+                        estu.Sacar(valosaq);                        
                     }
-
+                    else
+                    {
+                        Console.Clear();
+                        break;
+                    }
                 }
             }
             else if (escolhadomenu == 3) // Normal
             {
-                Console.Write("Digite o nome do títular:");
+                Console.Write("Digite o nome do títular: ");
                 string nomeTitular = Console.ReadLine();
 
                 Conta c = new Conta(Nconta, "1404-1", "Carioca", 0);
-                ContaEmpresa empre = new ContaEmpresa(Nconta, "1404-4", nomeTitular, 0, 0.35, 1000);
+                
 
                 Nconta += 1;
                 while (true)
@@ -141,8 +145,7 @@ internal class Program
                     Console.Write("\nEscolha uma das funções:\n");
                     Console.WriteLine("1- Fazer Saque.");
                     Console.WriteLine("2- Depositar");
-                    Console.WriteLine("3- Empréstimo");
-                    Console.WriteLine("4- Sair");
+                    Console.WriteLine("3- Sair");
 
                     Console.Write("Opção: ");
 
@@ -150,61 +153,54 @@ internal class Program
 
                     if (escos == 1) // Fazer Saque
                     {
+                        Console.Clear();
                         Console.WriteLine($"\nSaldo existente: {c.Saldo}");
-                        Console.Write("\nDigite o valor para o Saque: ");
+                        Console.Write("Digite o valor para o Saque R$: ");
 
 
                         int valor = Convert.ToInt32(Console.ReadLine());
 
-                        if (valor < empre.Saldo)
+                        if (valor <= c.Saldo)
                         {
-                            empre.Sacar(valor);
-                            Console.WriteLine($"Foi Sacado com sucesso: {valor}");
-                            Console.WriteLine($"Saldo atual: {empre.Saldo}");
+                            c.Sacar(valor);
+                            
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.WriteLine($"Saldo atual: {c.Saldo}");
+                           Console.ResetColor();
                         }
                         else
                         {
-                            Console.WriteLine("Saldo insuficiente para o saque.");
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("\nSaldo insuficiente para o saque.");
+                            Console.ResetColor();
                         }
-
+                      
                     }
                     else if (escos == 2) // Fazer Depósito
                     {
                         Console.Clear();
-                        Console.WriteLine($"\nSaldo existente: {c.Saldo}");
-                        Console.WriteLine("\n Digite o valor para Depositar: ");
+                        
+                        Console.WriteLine($"\nSaldo existente R$: {c.Saldo}");
+                        Console.Write("\n Digite o valor para Depositar R$: ");
                         double valor = Convert.ToDouble(Console.ReadLine());
                         c.Depositar(valor);
-                        Console.WriteLine($"Seu Novo Saldo {c.Saldo} ");
+                      
                     }
-                    else if (escos == 3) // Fazer Empréstimo
+                    else if (escolhadomenu == 3)
                     {
                         Console.Clear();
-                        Console.WriteLine($"Limite de seu empréstimo: {empre.LimiEmpre}");
-                        Console.WriteLine("\n Digite o valor para Empréstimo: ");
-                        double valor = Convert.ToDouble(Console.ReadLine());
-                        empre.RealizarEmprestimo(valor);
-                        Console.WriteLine($"Seu Novo Saldo {c.Saldo} ");
-                    }
-                    else if (escos == 4) // Sair das opções
-                    {
-                        Console.Clear();
+                        Console.WriteLine("\nFechando o programa!");
                         break;
                     }
+                    else
+                    {
+                        Console.Clear();
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("Opção Inválida!");
+                        Console.ResetColor();
+                    }
                 }
-            }
-            else if (escolhadomenu == 4)
-            {
-                Console.WriteLine("\nFechando o programa!");
-                break;
-            }
-            else
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Opção Inválida!");
-                  Console.ResetColor();
-               
-            }
+            }          
         }
     }
 }
