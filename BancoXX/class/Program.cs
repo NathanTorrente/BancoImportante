@@ -186,8 +186,11 @@ internal class Program
                         c.Depositar(valor);
                       
                     }
-                    
-                    
+                    else if (escolhadomenu == 3)
+                    {
+                        Console.Clear();               
+                        break;
+                    }
                 }
                
             }
