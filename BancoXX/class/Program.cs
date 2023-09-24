@@ -186,21 +186,24 @@ internal class Program
                         c.Depositar(valor);
                       
                     }
-                    else if (escolhadomenu == 3)
-                    {
-                        Console.Clear();
-                        Console.WriteLine("\nFechando o programa!");
-                        break;
-                    }
-                    else
-                    {
-                        Console.Clear();
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("Opção Inválida!");
-                        Console.ResetColor();
-                    }
+                    
+                    
                 }
-            }          
+               
+            }
+            else if (escolhadomenu == 4)
+            {
+                Console.Clear();
+                Console.WriteLine("\nFechando o programa!");
+                break;
+            }
+            else
+            {                         
+                Console.Clear();
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Opção Inválida!");
+                Console.ResetColor();              
+            }
         }
     }
 }
